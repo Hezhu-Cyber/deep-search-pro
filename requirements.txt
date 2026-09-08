@@ -11,6 +11,7 @@ langchain==1.2.10
 langchain-openai==1.1.10
 langgraph==1.0.9
 langgraph-checkpoint==4.0.0
+langgraph-prebuilt==1.0.8
 deepagents==0.4.3
 tavily-python==0.7.21
 # ragflow-sdk 按 Python 版本选择可用版本（0.24+ 需要 Python 3.12+）
