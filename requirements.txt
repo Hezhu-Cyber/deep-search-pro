@@ -1,0 +1,27 @@
+# ============================================
+# Deep Search Pro - 运行依赖（跨平台）
+# 说明：仅列出项目直接导入的依赖，传递依赖由 pip 自动解析。
+# Windows 且需要使用 Word 引擎转换 PDF 时，另见 requirements-windows.txt
+# ============================================
+fastapi==0.129.2
+uvicorn[standard]==0.41.0
+python-multipart==0.0.22
+pydantic==2.12.5
+langchain==1.2.10
+langchain-openai==1.1.10
+langgraph==1.0.9
+langgraph-checkpoint==4.0.0
+deepagents==0.4.3
+tavily-python==0.7.21
+ragflow-sdk==0.24.0
+mysql-connector-python==9.6.0
+python-dotenv==1.2.1
+PyYAML==6.0.3
+httpx==0.28.1
+websockets==15.0.1
+markdown==3.10.2
+weasyprint==68.1
+python-docx==1.2.0
+pypdf==6.7.2
+pandas==3.0.1
+openpyxl==3.1.5

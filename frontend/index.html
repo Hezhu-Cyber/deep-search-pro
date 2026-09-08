@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Deep Search Pro 多智能体研究工作台">
+  <title>Deep Search Pro</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Deep Search Pro 首页">
+        <span class="brand-mark">D</span>
+        <span><strong>Deep Search</strong><small>PRO</small></span>
+      </a>
+      <div class="model-chip"><span class="status-dot"></span>千问 3.8 Flash</div>
+      <button id="newTaskButton" class="ghost-button" type="button">新建对话</button>
+    </header>
+
+    <main class="workspace">
+      <aside class="activity-panel panel">
+        <div class="panel-heading">
+          <div><span class="eyebrow">LIVE TRACE</span><h2>执行轨迹</h2></div>
+          <span id="activityCount" class="count">0</span>
+        </div>
+        <div id="connectionState" class="connection-state"><span></span>等待任务</div>
+        <ol id="activityList" class="activity-list">
+          <li class="empty-state compact">提交问题后，这里会实时显示主智能体、搜索与工具调用进度。</li>
+        </ol>
+      </aside>
+
+      <section class="chat-panel panel">
+        <div class="chat-heading">
+          <div><span class="eyebrow">RESEARCH SESSION</span><h1>今天想研究什么？</h1></div>
+          <span id="sessionLabel" class="session-label">尚未开始</span>
+        </div>
+
+        <div id="messages" class="messages" aria-live="polite">
+          <article class="message assistant welcome-message">
+            <div class="avatar">D</div>
+            <div class="message-body">
+              <span class="message-author">Deep Search Pro</span>
+              <p>我可以协调多个智能体完成资料分析、内部知识检索和文档生成。输入任务，执行过程会实时呈现在左侧。</p>
+              <div class="suggestions">
+                <button type="button" data-prompt="分析生成式 AI Agent 的最新发展，并给出结构化总结">分析行业趋势</button>
+                <button type="button" data-prompt="读取我上传的文件，提炼重点并生成 Markdown 报告">总结上传文件</button>
+                <button type="button" data-prompt="帮我制定一个完整的研究计划，列出关键问题和执行步骤">制定研究计划</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <form id="composer" class="composer">
+          <div id="attachmentBar" class="attachment-bar" hidden></div>
+          <textarea id="queryInput" rows="1" placeholder="描述你的研究任务…" aria-label="研究任务" required></textarea>
+          <div class="composer-actions">
+            <label class="attach-button" title="上传参考文件">
+              <input id="fileInput" type="file" multiple hidden>
+              <span>＋</span> 添加文件
+            </label>
+            <span class="shortcut">Enter 发送 · Shift + Enter 换行</span>
+            <button id="sendButton" class="send-button" type="submit">开始研究 <span>↗</span></button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="files-panel panel">
+        <div class="panel-heading">
+          <div><span class="eyebrow">DELIVERABLES</span><h2>成果文件</h2></div>
+          <button id="refreshFiles" class="icon-button" type="button" title="刷新文件">↻</button>
+        </div>
+        <div id="filesList" class="files-list">
+          <div class="empty-state file-empty"><span class="file-illustration">⌁</span><strong>暂无成果</strong><p>智能体生成的报告和文档会出现在这里。</p></div>
+        </div>
+        <div class="capability-card">
+          <span class="eyebrow">ACTIVE CAPABILITIES</span>
+          <ul><li><span class="cap-dot violet"></span>智能体编排</li><li><span class="cap-dot cyan"></span>文件解析</li><li><span class="cap-dot amber"></span>文档生成</li></ul>
+        </div>
+      </aside>
+    </main>
+  </div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# 可选：仅在 Windows 且需要使用 Word COM 引擎把 Markdown 转 PDF 时安装
+pywin32==311
