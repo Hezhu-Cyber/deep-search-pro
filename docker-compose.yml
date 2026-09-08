@@ -1,0 +1,41 @@
+# Deep Search Pro - 一键启动
+#
+# 用法：
+#   1) 复制 .env.example 为 .env 并填写 LLM / Tavily 等配置
+#   2) docker compose up --build
+#   3) 打开 http://localhost:8000
+#
+# 说明：
+#   - MySQL / RAGFlow 为可选能力；未配置时主智能体会自动优雅降级。
+#   - 如需自建 MySQL，取消下面 mysql 服务的注释并配置 .env 中的 MYSQL_*。
+services:
+  api:
+    build: .
+    container_name: deep-search-pro
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - DEEPSEARCH_OUTPUT_ROOT=/app/output
+    volumes:
+      - ./output:/app/output
+      - ./updated:/app/updated
+    restart: unless-stopped
+
+  # mysql:
+  #   image: mysql:8.4
+  #   container_name: deep-search-pro-mysql
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: deep_search
+  #     MYSQL_USER: deep
+  #     MYSQL_PASSWORD: deep123
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - mysql_data:/var/lib/mysql
+  #   restart: unless-stopped
+
+# volumes:
+#   mysql_data:

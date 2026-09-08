@@ -1,0 +1,30 @@
+# Git / 环境
+.git
+.gitignore
+.env
+.env.*
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# 运行时数据
+output/
+updated/
+data/
+evals/reports/
+
+# IDE / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 文档与辅助（镜像内不需要课程 PDF 等）
+*.pdf
+rollback-backup-*/
