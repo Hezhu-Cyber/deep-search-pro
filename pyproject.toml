@@ -1,0 +1,19 @@
+[project]
+name = "deep-search-pro"
+version = "0.2.0"
+description = "基于 LangChain / deepagents 的多智能体协作研究系统：主智能体调度搜索、数据库、知识库子智能体，实时推送执行轨迹并生成文档。"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]
